@@ -1,11 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using CollegeEnrollmentSystem.Data;
+﻿using CollegeEnrollmentSystem.Data;
 using CollegeEnrollmentSystem.Models;
 using CollegeEnrollmentSystem.ViewModels.Students;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace CollegeEnrollmentSystem.Controllers
 {
+    [Authorize]
+    //Authorize(Roles = "Admin")
     public class StudentsController : Controller
     {
         private readonly ApplicationDbContext _context;

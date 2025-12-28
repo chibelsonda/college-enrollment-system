@@ -8,17 +8,17 @@ namespace CollegeEnrollmentSystem.ViewModels.Students
 
         [Required]
         [StringLength(100)]
-        public required string FirstName { get; set; }
+        public string? FirstName { get; set; }
 
         [Required]
         [StringLength(100)]
-        public required string LastName { get; set; }
+        public string? LastName { get; set; }
 
         [Required]
         [EmailAddress]
-        public required string Email { get; set; }
+        public string? Email { get; set; }
 
         [Range(1, 120)]
-        public required int Age { get; set; }
+        public int Age { get; set; }
     }
 }

@@ -1,11 +1,14 @@
 ﻿using CollegeEnrollmentSystem.Data;
 using CollegeEnrollmentSystem.DTOs;
 using CollegeEnrollmentSystem.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace CollegeEnrollmentSystem.Controllers.Api
 {
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [ApiController]
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/students")]
