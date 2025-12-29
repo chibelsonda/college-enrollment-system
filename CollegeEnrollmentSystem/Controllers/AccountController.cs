@@ -32,6 +32,9 @@ namespace CollegeEnrollmentSystem.Controllers
                 FullName = model.FullName
             };
 
+            if (model.Password is null)
+                return View(model);
+
             var result = await _userManager.CreateAsync(user, model.Password);
 
             if (result.Succeeded)
@@ -54,6 +57,9 @@ namespace CollegeEnrollmentSystem.Controllers
         public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (!ModelState.IsValid) return View(model);
+
+            if (model.Email is null || model.Password is null)
+                return View(model);
 
             var result = await _signInManager.PasswordSignInAsync(
                 model.Email,

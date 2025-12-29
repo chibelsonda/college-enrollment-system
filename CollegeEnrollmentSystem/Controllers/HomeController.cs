@@ -1,5 +1,5 @@
 using System.Diagnostics;
-using CollegeEnrollmentSystem.Models;
+using CollegeEnrollmentSystem.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CollegeEnrollmentSystem.Controllers

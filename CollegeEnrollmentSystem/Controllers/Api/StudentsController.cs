@@ -1,22 +1,21 @@
 ﻿using CollegeEnrollmentSystem.Data;
-using CollegeEnrollmentSystem.DTOs;
+using CollegeEnrollmentSystem.DTOs.Service.Students;
 using CollegeEnrollmentSystem.Models;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace CollegeEnrollmentSystem.Controllers.Api
 {
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    [Authorize]
     [ApiController]
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/students")]
-    public class StudentsApiController : ControllerBase
+    public class StudentsController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
+        private readonly AppDbContext _context;
 
-        public StudentsApiController(ApplicationDbContext context)
+        public StudentsController(AppDbContext context)
         {
             _context = context;
         }

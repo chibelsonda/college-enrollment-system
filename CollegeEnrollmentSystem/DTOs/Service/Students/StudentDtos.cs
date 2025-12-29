@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CollegeEnrollmentSystem.DTOs
+namespace CollegeEnrollmentSystem.DTOs.Service.Students
 {
     public class StudentCreateDto
     {
@@ -13,17 +13,31 @@ namespace CollegeEnrollmentSystem.DTOs
         [Required, EmailAddress]
         public required string Email { get; set; }
 
+        [Range(1, 120)]
         public required int Age { get; set; }
     }
 
-    public class StudentUpdateDto : StudentCreateDto
+    public class StudentUpdateDto
     {
-        public Guid Id { get; set; }
+        [Required]
+        public required Guid Id { get; set; }
+
+        [Required]
+        public required string FirstName { get; set; }
+
+        [Required]
+        public required string LastName { get; set; }
+
+        [Required, EmailAddress]
+        public required string Email { get; set; }
+
+        [Range(1, 120)]
+        public required int Age { get; set; }
     }
 
     public class StudentResponseDto
     {
-        public Guid Id { get; set; }
+        public required Guid Id { get; set; }
         public required string FirstName { get; set; }
         public required string LastName { get; set; }
         public required string Email { get; set; }

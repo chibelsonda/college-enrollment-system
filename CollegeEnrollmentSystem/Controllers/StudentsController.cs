@@ -8,12 +8,12 @@ using Microsoft.EntityFrameworkCore;
 namespace CollegeEnrollmentSystem.Controllers
 {
     [Authorize]
-    //Authorize(Roles = "Admin")
+    //[Authorize(Roles = "Admin")]
     public class StudentsController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly AppDbContext _context;
 
-        public StudentsController(ApplicationDbContext context)
+        public StudentsController(AppDbContext context)
         {
             _context = context;
         }
@@ -81,9 +81,9 @@ namespace CollegeEnrollmentSystem.Controllers
             var student = new Student
             {
                 Id = Guid.NewGuid(),
-                FirstName = vm.FirstName,
-                LastName = vm.LastName,
-                Email = vm.Email,
+                FirstName = vm.FirstName!,
+                LastName = vm.LastName!,
+                Email = vm.Email!,
                 Age = vm.Age
             };
 
@@ -128,9 +128,9 @@ namespace CollegeEnrollmentSystem.Controllers
                 return NotFound();
 
             // Safe update (no blind overwrite)
-            student.FirstName = vm.FirstName;
-            student.LastName = vm.LastName;
-            student.Email = vm.Email;
+            student.FirstName = vm.FirstName!;
+            student.LastName = vm.LastName!;
+            student.Email = vm.Email!;
             student.Age = vm.Age;
 
             await _context.SaveChangesAsync();

@@ -1,4 +1,4 @@
-namespace CollegeEnrollmentSystem.Models
+namespace CollegeEnrollmentSystem.ViewModels
 {
     public class ErrorViewModel
     {
