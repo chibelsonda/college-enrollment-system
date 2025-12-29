@@ -78,11 +78,11 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
 
 builder.Services.AddAuthentication(options =>
 {
-    options.DefaultScheme = "SmartScheme";
-    options.DefaultAuthenticateScheme = "SmartScheme";
-    options.DefaultChallengeScheme = "SmartScheme";
+    options.DefaultScheme = "DynamicAuth";
+    options.DefaultAuthenticateScheme = "DynamicAuth";
+    options.DefaultChallengeScheme = "DynamicAuth";
 })
-.AddPolicyScheme("SmartScheme", "JWT or Identity", options =>
+.AddPolicyScheme("DynamicAuth", "JWT or Identity", options =>
 {
     options.ForwardDefaultSelector = context =>
     {
@@ -130,7 +130,7 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-else 
+else
 {
     app.UseSwagger();
     app.UseSwaggerUI(options =>
