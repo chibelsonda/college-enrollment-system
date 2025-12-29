@@ -1,14 +1,15 @@
 ﻿using CollegeEnrollmentSystem.Data;
+using CollegeEnrollmentSystem.DTOs.Api.Auth;
 using CollegeEnrollmentSystem.Helpers;
 using CollegeEnrollmentSystem.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+
 
 namespace CollegeEnrollmentSystem.Controllers.Api
 {
@@ -40,7 +41,7 @@ namespace CollegeEnrollmentSystem.Controllers.Api
         // REGISTER
         [AllowAnonymous]
         [HttpPost("register")]
-        public IActionResult Register(RegisterRequest request)
+        public IActionResult Register(RegisterUserRequest request)
         {
             if (_context.Users.Any(u => u.Email == request.Email))
                 return BadRequest("Email already exists");

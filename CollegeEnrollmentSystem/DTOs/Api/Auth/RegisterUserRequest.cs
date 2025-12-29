@@ -2,7 +2,7 @@
 
 namespace CollegeEnrollmentSystem.DTOs.Api.Auth
 {
-    public class RegisterRequest
+    public class RegisterUserRequest
     {
         [Required, EmailAddress]
         public required string Email { get; set; }
