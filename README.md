@@ -81,6 +81,7 @@ dotnet ef database update
 ```
 
 ## ▶️ Running the Project
+
 dotnet restore
 dotnet build
 dotnet run
@@ -105,11 +106,15 @@ Improved UI/UX
 
 Unit & integration testing
 
+---
+
 ## 👨‍💻 Author
 
 Chicote
 Web Developer / Full-Stack Developer
 ASP.NET Core • C# • SQL Server • React
+
+---
 
 ## 📜 License
 
