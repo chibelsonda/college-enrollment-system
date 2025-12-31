@@ -1,0 +1,118 @@
+﻿/* 
+   Global page styles
+   - Prevent horizontal scrolling
+   - Light background for dashboard
+*/
+body {
+    background-color: #f5f7fb;
+    overflow-x: hidden;
+}
+
+/* 
+   Sidebar layout
+   - Fixed on the left
+   - Slides in/out using transform
+*/
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    background-color: #1e293b;
+    transition: transform 0.3s ease;
+    z-index: 1040;
+}
+
+    /* Sidebar hidden state */
+    .sidebar.collapsed {
+        transform: translateX(-260px);
+    }
+
+    /* 
+   Sidebar navigation links
+*/
+    .sidebar .nav-link {
+        color: #cbd5e1;
+        text-decoration: none;
+    }
+
+        .sidebar .nav-link:hover {
+            background-color: #334155;
+            color: #ffffff;
+        }
+
+        .sidebar .nav-link.active {
+            background-color: #2563eb;
+            color: #ffffff;
+        }
+
+    /* 
+   Sidebar dropdown (submenu links)
+   - Disable transitions to prevent text size flicker
+*/
+    .sidebar .collapse .nav-link {
+        font-size: 0.9rem;
+        padding: 0.4rem 1rem;
+        transition: none;
+    }
+
+/* 
+   Dropdown arrow animation
+*/
+.sidebar-toggle .bi-chevron-down {
+    transition: transform 0.2s ease;
+}
+
+.sidebar-toggle.active .bi-chevron-down {
+    transform: rotate(180deg);
+}
+
+/* 
+   Main content area
+   - Offset when sidebar is visible
+*/
+.content {
+    margin-left: 260px;
+    min-height: 100vh;
+    transition: margin-left 0.3s ease;
+}
+
+    /* Content expands when sidebar is hidden */
+    .content.full {
+        margin-left: 0;
+    }
+
+/* 
+   Top navbar
+*/
+.navbar {
+    height: 60px;
+}
+
+    .navbar .btn {
+        border: none;
+    }
+
+/* 
+   Statistic cards
+*/
+.card-stat {
+    border: none;
+    border-radius: 12px;
+}
+
+/* 
+   Mobile behavior
+   - Sidebar hidden by default before JS runs
+   - Content always full width
+*/
+@media (max-width: 992px) {
+    body:not(.sidebar-ready) .sidebar {
+        transform: translateX(-260px);
+    }
+
+    .content {
+        margin-left: 0;
+    }
+}
