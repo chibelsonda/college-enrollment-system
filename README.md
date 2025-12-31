@@ -58,9 +58,6 @@ This project is designed for learning, demonstration, and real-world application
 Example:
 /api/v1/students
 
-yaml
-Copy code
-
 ---
 
 ## 📊 Swagger API Documentation
@@ -81,17 +78,20 @@ https://localhost
 dotnet ef migrations add InitialCreate
 dotnet ef database update
 
-▶️ Running the Project
+```
+
+## ▶️ Running the Project
 dotnet restore
 dotnet build
 dotnet run
-
 
 Then open:
 
 https://localhost:<port>
 
-📌 Planned Improvements
+---
+
+## 📌 Planned Improvements
 
 Enrollment workflow
 
@@ -105,12 +105,12 @@ Improved UI/UX
 
 Unit & integration testing
 
-👨‍💻 Author
+## 👨‍💻 Author
 
 Chicote
 Web Developer / Full-Stack Developer
 ASP.NET Core • C# • SQL Server • React
 
-📜 License
+## 📜 License
 
 This project is under active development and intended for educational and demonstration purposes.
