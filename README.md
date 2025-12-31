@@ -87,7 +87,7 @@ dotnet run
 
 Then open:
 
-https://localhost:<port>
+https://localhost:`<port>`
 
 ---
 
